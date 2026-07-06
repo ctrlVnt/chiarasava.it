@@ -99,7 +99,7 @@ const Hero = () => {
         </br>
         <br>
         </br>
-        My research focuses on the application of homotopy-theoretical methods to representation theory of finite dimensional algebras,
+        My research focuses on the application of homotopy-theoretic methods to representation theory of finite dimensional algebras,
         with an emphasis on tilting theory. I mainly work with enhancements of triangulated categories 
         and I have recently begun exploring extensions of these methods to differential categories. 
       </p>
