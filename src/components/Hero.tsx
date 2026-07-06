@@ -86,7 +86,7 @@ const Hero = () => {
       </h1>
       
       <p ref={textRef} className="text-lg text-gray-600 max-w-md mx-auto lg:mx-0 mb-8">
-        I am a Ph.D. student at Charles University in Prague and 
+        🌻 I am a Ph.D. student at Charles University in Prague and 
         I work under the supervision of{" "}
         <a
           className="text-cyan-600"
@@ -99,9 +99,9 @@ const Hero = () => {
         </br>
         <br>
         </br>
-        My research focuses on the application of homotopy-theoretical methods to representation theory of finite dimensional algebras,
+        🌻 My research focuses on the application of homotopy-theoretical methods to representation theory of finite dimensional algebras,
         with an emphasis on tilting theory. I mainly work with enhancements of triangulated categories 
-        and I have recently begun exploring extensions of these methods to differential categories.
+        and I have recently begun exploring extensions of these methods to differential categories. 
       </p>
 
       <div ref={buttonRef} className="flex flex-row justify-center lg:justify-start">
