@@ -46,16 +46,7 @@ const Research = () => {
   }, []);
 
 
-  const publications = [
-    {
-      title: "∞-Dold-Kan correspondence via representation theory",
-      authors: [
-        { name: "C. Sava", link: "#" }
-      ],
-      journal: "Algebr Represent Theor",
-      year: "(2026)",
-      link: "https://doi.org/10.1007/s10468-026-10388-3"
-    },
+  const publications = [  
     {
       title: "Derivations as Algebras",
       authors: [
@@ -65,6 +56,15 @@ const Research = () => {
       journal: "arXiv (Accepted for publication in the Journal of the London Mathematical Society)",
       year: "(2026)",
       link: "https://arxiv.org/abs/2602.16381"
+    },
+    {
+      title: "∞-Dold-Kan correspondence via representation theory",
+      authors: [
+        { name: "C. Sava", link: "#" }
+      ],
+      journal: "Algebras and Representation Theory",
+      year: "(2026)",
+      link: "https://doi.org/10.1007/s10468-026-10388-3"
     }
   ];
 
