@@ -63,7 +63,7 @@ const Research = () => {
     {
       title: "Derivations as Algebras",
       authors: [
-        { name: "J.S. Pacaud Lemay", link: "#" },
+        { name: "J.S. Pacaud Lemay", link: "https://sites.google.com/view/jspl-personal-webpage/" },
         { name: "C. Sava", link: "#" }
       ],
       journal: "arXiv (Accepted for publication in the Journal of the London Mathematical Society)",
@@ -73,7 +73,7 @@ const Research = () => {
     {
       title: "The derivator of a dg-category",
       authors: [
-        { name: "F. Genovese", link: "#" },
+        { name: "F. Genovese", link: "https://fgenovese1987.github.io/" },
         { name: "C. Sava", link: "#" },
         { name: "with an appendix by J. Šťovíček", link: "https://www.karlin.mff.cuni.cz/~stovicek/index.php/en/homepage" }
       ],
@@ -93,7 +93,7 @@ const Research = () => {
     {
       title: "Differential graded algebras in differential categories",
       authors: [
-        { name: "J.S. Pacaud Lemay", link: "#" },
+        { name: "J.S. Pacaud Lemay", link: "https://sites.google.com/view/jspl-personal-webpage/" },
         { name: "C. Sava", link: "#" }
       ],
       journal: "work in progress",
