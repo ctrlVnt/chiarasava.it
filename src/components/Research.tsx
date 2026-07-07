@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 import { gsap } from "gsap";
 
@@ -7,6 +6,7 @@ const Research = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const publicationsRef = useRef<HTMLDivElement>(null);
+  const preprintsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -16,52 +16,116 @@ const Research = () => {
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 1.2 });
+    
     tl.from(titleRef.current, {
       y: 30,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-    }).from(publicationsRef.current?.children, {
-      y: 20,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: "power3.out",
-    }, "-=0.5");
+    });
+
+    if (publicationsRef.current) {
+      tl.from(publicationsRef.current.children, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power3.out",
+      }, "-=0.5");
+    }
+
+    if (preprintsRef.current) {
+      tl.from(preprintsRef.current.children, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power3.out",
+      }, "-=0.5");
+    }
   }, []);
+
 
   const publications = [
     {
-      title: "Equivalent definitions of the preprojective algebra",
-      journal: "C. Sava, arXiv preprint",
-      year: "(2022)",
-      link: "https://arxiv.org/abs/2203.00792"
-    },
-    {
       title: "∞-Dold-Kan correspondence via representation theory",
-      journal: "C. Sava, Algebr Represent Theor",
+      authors: [
+        { name: "C. Sava", link: "#" }
+      ],
+      journal: "Algebr Represent Theor",
       year: "(2026)",
       link: "https://doi.org/10.1007/s10468-026-10388-3"
-    },
+    }
+  ];
+
+  
+  const preprints = [
     {
-      title: "The derivator of a dg-category",
-      journal: "F. Genovese, C. Sava with an appendix by J. Šťovíček, arXiv preprint",
-      year: "(2025)",
-      link: "https://arxiv.org/abs/2508.02612"
-    },
-     {
       title: "Derivations as Algebras",
-      journal: "J.S. Pacaud Lemay, C. Sava, arXiv preprint (Accepted for publication in the Journal of the London Mathematical Society)",
+      authors: [
+        { name: "J.S. Pacaud Lemay", link: "#" },
+        { name: "C. Sava", link: "#" }
+      ],
+      journal: "arXiv (Accepted for publication in the Journal of the London Mathematical Society)",
       year: "(2026)",
       link: "https://arxiv.org/abs/2602.16381"
     },
     {
+      title: "The derivator of a dg-category",
+      authors: [
+        { name: "F. Genovese", link: "#" },
+        { name: "C. Sava", link: "#" },
+        { name: "with an appendix by J. Šťovíček", link: "https://www.karlin.mff.cuni.cz/~stovicek/index.php/en/homepage" }
+      ],
+      journal: "arXiv preprint",
+      year: "(2025)",
+      link: "https://arxiv.org/abs/2508.02612"
+    },
+    {
+      title: "Equivalent definitions of the preprojective algebra",
+      authors: [
+        { name: "C. Sava", link: "#" }
+      ],
+      journal: "arXiv preprint",
+      year: "(2022)",
+      link: "https://arxiv.org/abs/2203.00792"
+    },
+    {
       title: "Differential graded algebras in differential categories",
-      journal: "J.S. Pacaud Lemay, C. Sava, work in progress",
+      authors: [
+        { name: "J.S. Pacaud Lemay", link: "#" },
+        { name: "C. Sava", link: "#" }
+      ],
+      journal: "work in progress",
       year: "",
       link: "#"
     },
   ];
+
+  const renderAuthors = (authorsList: { name: string; link: string }[]) => {
+    return authorsList.map((author, index) => {
+      const isLast = index === authorsList.length - 1;
+      const authorElement = author.link && author.link !== "#" ? (
+        <a 
+          href={author.link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-600 hover:underline"
+        >
+          {author.name}
+        </a>
+      ) : (
+        <span>{author.name}</span>
+      );
+
+      return (
+        <span key={index}>
+          {authorElement}
+          {!isLast && ", "}
+        </span>
+      );
+    });
+  };
 
   return (
     <section ref={sectionRef} id="research" className="bg-red-100 relative pb-16 bg-S overflow-hidden">
@@ -106,37 +170,93 @@ const Research = () => {
           <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Research</h2>
         </div>
 
-  
-          {/* Recent Publications */}
-          <div ref={publicationsRef}>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Publications</h3>
-            <div className="space-y-4">
-              {publications.map((pub, index) => (
-                <div key={index} className="bg-card border border-red-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
-                  <h4 className="font-medium text-gray-900 mb-2">{pub.title}</h4>
-                  <p className="text-gray-600 text-sm mb-2">{pub.journal} • {pub.year}</p>
+        <div className="space-y-12">
+          {/* Sezione Pubblicazioni */}
+          {publications.length > 0 && (
+            <div ref={publicationsRef}>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Publications</h3>
+              <div className="space-y-4">
+                {publications.map((pub, index) => (
+                  <div key={index} className="bg-card border border-red-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
+                    
+                    {/* Titolo come Link (se presente) */}
+                    {pub.link !== "#" ? (
+                      <h4 className="font-semibold text-gray-900 text-lg mb-1">
+                        <a 
+                          href={pub.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="hover:text-blue-600 hover:underline transition-colors duration-150 block"
+                        >
+                          {pub.title}
+                        </a>
+                      </h4>
+                    ) : (
+                      <h4 className="font-semibold text-gray-900 text-lg mb-1">{pub.title}</h4>
+                    )}
 
-                  {pub.link !== "#" && (
-                    <a
-                      href={pub.link}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm"
-                    >
-                      View Publication
-                      <ExternalLink size={14} className="ml-1" />
-                    </a>
-                  )}
-
-                  {pub.link === "#" && (
-                    <p className="inline-flex items-center text-gray-400 hover:text-gray-800 text-sm">
-                      Ongoing works... 🚧
+                    {/* Autori */}
+                    <p className="text-gray-700 text-sm mb-1">
+                      {renderAuthors(pub.authors)}
                     </p>
-                  )}
-                </div>
-              ))}
+
+                    {/* Journal e Anno */}
+                    <p className="text-gray-500 text-xs italic">
+                      {pub.journal} {pub.year && `• ${pub.year}`}
+                    </p>
+
+                    {pub.link === "#" && (
+                      <p className="text-xs text-gray-400 mt-2 font-medium">
+                        Ongoing works... 🚧
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Sezione Preprints */}
+          {preprints.length > 0 && (
+            <div ref={preprintsRef}>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Preprints</h3>
+              <div className="space-y-4">
+                {preprints.map((prep, index) => (
+                  <div key={index} className="bg-card border border-red-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
+                    
+                    {/* Titolo come Link (se presente) */}
+                    {prep.link !== "#" ? (
+                      <h4 className="font-semibold text-gray-900 text-lg mb-1">
+                        <a 
+                          href={prep.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="hover:text-blue-600 hover:underline transition-colors duration-150 block"
+                        >
+                          {prep.title}
+                        </a>
+                      </h4>
+                    ) : (
+                      <h4 className="font-semibold text-gray-900 text-lg mb-1">{prep.title}</h4>
+                    )}
+
+                    {/* Autori */}
+                    <p className="text-gray-700 text-sm mb-1">
+                      {renderAuthors(prep.authors)}
+                    </p>
+
+                    {/* Journal e Anno */}
+                    <p className="text-gray-500 text-xs italic">
+                      {prep.journal} {prep.year && `• ${prep.year}`}
+                    </p>
+
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      
+      </div>
     </section>
   );
 };
