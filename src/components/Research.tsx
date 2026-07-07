@@ -110,7 +110,7 @@ const Research = () => {
           href={author.link} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-blue-600 hover:underline"
+          className="text-red-600 hover:underline"
         >
           {author.name}
         </a>
@@ -231,7 +231,7 @@ const Research = () => {
                           href={prep.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="hover:text-blue-600 hover:underline transition-colors duration-150 block"
+                          className="hover:text-red-600 hover:underline transition-colors duration-150 block"
                         >
                           {prep.title}
                         </a>
