@@ -186,7 +186,7 @@ const Research = () => {
                           href={pub.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="hover:text-blue-600 hover:underline transition-colors duration-150 block"
+                          className="hover:text-red-600 hover:underline transition-colors duration-150 block"
                         >
                           {pub.title}
                         </a>
