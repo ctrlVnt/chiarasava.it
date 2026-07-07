@@ -55,11 +55,7 @@ const Research = () => {
       journal: "Algebr Represent Theor",
       year: "(2026)",
       link: "https://doi.org/10.1007/s10468-026-10388-3"
-    }
-  ];
-
-  
-  const preprints = [
+    },
     {
       title: "Derivations as Algebras",
       authors: [
@@ -69,7 +65,11 @@ const Research = () => {
       journal: "arXiv (Accepted for publication in the Journal of the London Mathematical Society)",
       year: "(2026)",
       link: "https://arxiv.org/abs/2602.16381"
-    },
+    }
+  ];
+
+  
+  const preprints = [
     {
       title: "The derivator of a dg-category",
       authors: [
