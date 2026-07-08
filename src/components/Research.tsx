@@ -62,8 +62,8 @@ const Research = () => {
       authors: [
         { name: "C. Sava", link: "#" }
       ],
-      journal: "Algebras and Representation Theory",
-      year: "(2026)",
+      journal: "Algebras and Representation Theory (2026) 29:565–607",
+      year: "#",
       link: "https://doi.org/10.1007/s10468-026-10388-3"
     }
   ];
