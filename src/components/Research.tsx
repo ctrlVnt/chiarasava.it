@@ -48,7 +48,7 @@ const Research = () => {
 
   const publications = [  
     {
-      title: "Derivations as Algebras",
+      title: "Derivations as algebras",
       authors: [
         { name: "J.S. Pacaud Lemay", link: "https://sites.google.com/view/jspl-personal-webpage/" },
         { name: "C. Sava", link: "#" }
