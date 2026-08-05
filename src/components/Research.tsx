@@ -53,9 +53,9 @@ const Research = () => {
         { name: "J.S. Pacaud Lemay", link: "https://sites.google.com/view/jspl-personal-webpage/" },
         { name: "C. Sava", link: "#" }
       ],
-      journal: "arXiv (Accepted for publication in the Journal of the London Mathematical Society)",
+      journal: "J. London Math. Soc., 114: e70650.",
       year: "(2026)",
-      link: "https://arxiv.org/abs/2602.16381"
+      link: "https://doi.org/10.1112/jlms.70650"
     },
     {
       title: "∞-Dold-Kan correspondence via representation theory",
