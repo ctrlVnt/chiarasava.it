@@ -86,8 +86,16 @@ const Hero = () => {
       </h1>
       
       <p ref={textRef} className="text-lg text-gray-600 max-w-md mx-auto lg:mx-0 mb-8">
-        I am a Ph.D. student at Charles University in Prague and 
-        I work under the supervision of{" "}
+        I am a postdoc at the University of Milan, working with {" "}
+        <a
+          className="text-cyan-600"
+          href="https://www.unimi.it/en/ugov/person/amnon-neeman"
+          target="_blank"
+        >
+          Amnon Neeman
+        </a>.
+        
+       Previously I did my Ph.D. at Charles University in Prague under the supervision of{" "}
         <a
           className="text-cyan-600"
           href="https://www.karlin.mff.cuni.cz/~stovicek/index.php/en/homepage"
