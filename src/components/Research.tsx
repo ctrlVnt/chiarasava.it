@@ -46,7 +46,17 @@ const Research = () => {
   }, []);
 
 
-  const publications = [  
+  const publications = [  {
+      title: "The derivator of a dg-category",
+      authors: [
+        { name: "F. Genovese", link: "https://fgenovese1987.github.io/" },
+        { name: "C. Sava", link: "#" },
+        { name: "with an appendix by J. Šťovíček", link: "https://www.karlin.mff.cuni.cz/~stovicek/index.php/en/homepage" }
+      ],
+      journal: "Accepted for publication in the Journal of Pure and Applied Algebra",
+      year: "(2026)",
+      link: "https://arxiv.org/abs/2508.02612"
+    },
     {
       title: "Derivations as algebras",
       authors: [
@@ -70,17 +80,6 @@ const Research = () => {
 
   
   const preprints = [
-    {
-      title: "The derivator of a dg-category",
-      authors: [
-        { name: "F. Genovese", link: "https://fgenovese1987.github.io/" },
-        { name: "C. Sava", link: "#" },
-        { name: "with an appendix by J. Šťovíček", link: "https://www.karlin.mff.cuni.cz/~stovicek/index.php/en/homepage" }
-      ],
-      journal: "arXiv preprint",
-      year: "(2025)",
-      link: "https://arxiv.org/abs/2508.02612"
-    },
     {
       title: "Equivalent definitions of the preprojective algebra",
       authors: [
