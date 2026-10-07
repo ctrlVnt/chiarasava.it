@@ -98,8 +98,6 @@ const Contact = () => {
                   <Mail className="text-blue-600" size={20} />
                   <div>
                     <p className="font-medium text-gray-900">Email</p>
-                    <a href="mailto:sava@karlin.mff.cuni.cz" className="text-gray-600 hover:text-blue-600">
-                      <p>sava[at]karlin.mff.cuni.cz</p>
                       <a href="mailto:chiara.sava@unimi.it" className="text-gray-600 hover:text-blue-600">
                       <p>chiara.sava[at]unimi.it</p>
                     </a>
