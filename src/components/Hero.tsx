@@ -86,7 +86,7 @@ const Hero = () => {
       </h1>
       
       <p ref={textRef} className="text-lg text-gray-600 max-w-md mx-auto lg:mx-0 mb-8">
-        I am a postdoc at the University of Milan, where I work with {" "}
+        I am a postdoctoral researcher at the Università degli studi di Milano Statale, where I work with {" "}
         <a
           className="text-cyan-600"
           href="https://www.unimi.it/en/ugov/person/amnon-neeman"
