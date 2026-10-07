@@ -107,11 +107,10 @@ const Contact = () => {
                 <div className="flex items-center space-x-3">
                   <MapPin className="text-blue-600" size={20} />
                   <div>
-                    <a href="https://www.mff.cuni.cz/en" target='_blank' className="text-gray-600 hover:text-blue-600">
-                      <p className="font-medium text-gray-900">Department of Algebra</p>
-                      <p>Charles University</p>
-                      <p>Faculty of Mathematics and Physics </p>
-                      <p>Sokolovska 83, 186 75 Praha 8, Czech Republic</p>
+                    <a href="https://matematica.unimi.it/it" target='_blank' className="text-gray-600 hover:text-blue-600">
+                      <p className="font-medium text-gray-900"> Department of Mathematics "Federigo Enriques" </p>
+                      <p> Università degli Studi di Milano Statale </p> 
+                      <p> Via Saldini 50, 20133 MILANO (MI) </p>
                     </a>
                   </div>
                 </div>
